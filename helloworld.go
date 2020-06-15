@@ -22,8 +22,8 @@ func main() {
 	if port == "" {
 		port = "80"
 	}
-
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+	return
+//	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 }
 
 
