@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -22,9 +23,12 @@ func main() {
 	if port == "" {
 		port = "80"
 	}
-	test
-	return
-//	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+
+	go func() {
+		time.Sleep(20 * time.Second)
+		panic(fmt.Errorf("test"))
+	}()
+
+	//return
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 }
-
-
