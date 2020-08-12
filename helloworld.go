@@ -24,10 +24,10 @@ func main() {
 		port = "80"
 	}
 
-	go func() {
-		time.Sleep(20 * time.Second)
-		panic(fmt.Errorf("test"))
-	}()
+	//go func() {
+	//	time.Sleep(20 * time.Second)
+	//	panic(fmt.Errorf("test"))
+	//}()
 
 	//return
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
